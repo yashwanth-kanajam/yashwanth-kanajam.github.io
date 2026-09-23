@@ -1,0 +1,168 @@
+/* Generated synthetic aggregates; see tools/export_data.py. */
+window.PORTFOLIO_DATA = {
+  "seed": 17,
+  "year": 2024,
+  "synthetic": true,
+  "monthly": [
+    {
+      "month": "2024-01-01",
+      "member_months": 24,
+      "claims": 8,
+      "lines": 12,
+      "units": 12,
+      "paid_cents": 118709,
+      "paid_per_member_month": 49.46208333333333,
+      "claims_per_1000_member_months": 333.3333333333333
+    },
+    {
+      "month": "2024-02-01",
+      "member_months": 24,
+      "claims": 4,
+      "lines": 11,
+      "units": 11,
+      "paid_cents": 104697,
+      "paid_per_member_month": 43.62375,
+      "claims_per_1000_member_months": 166.66666666666666
+    },
+    {
+      "month": "2024-03-01",
+      "member_months": 24,
+      "claims": 3,
+      "lines": 7,
+      "units": 7,
+      "paid_cents": 46135,
+      "paid_per_member_month": 19.222916666666666,
+      "claims_per_1000_member_months": 125.0
+    },
+    {
+      "month": "2024-04-01",
+      "member_months": 24,
+      "claims": 10,
+      "lines": 19,
+      "units": 19,
+      "paid_cents": 154264,
+      "paid_per_member_month": 64.27666666666667,
+      "claims_per_1000_member_months": 416.6666666666667
+    },
+    {
+      "month": "2024-05-01",
+      "member_months": 24,
+      "claims": 12,
+      "lines": 30,
+      "units": 30,
+      "paid_cents": 210712,
+      "paid_per_member_month": 87.79666666666667,
+      "claims_per_1000_member_months": 500.0
+    },
+    {
+      "month": "2024-06-01",
+      "member_months": 24,
+      "claims": 9,
+      "lines": 17,
+      "units": 17,
+      "paid_cents": 92436,
+      "paid_per_member_month": 38.515,
+      "claims_per_1000_member_months": 375.0
+    },
+    {
+      "month": "2024-07-01",
+      "member_months": 24,
+      "claims": 11,
+      "lines": 24,
+      "units": 24,
+      "paid_cents": 224625,
+      "paid_per_member_month": 93.59375,
+      "claims_per_1000_member_months": 458.3333333333333
+    },
+    {
+      "month": "2024-08-01",
+      "member_months": 24,
+      "claims": 9,
+      "lines": 18,
+      "units": 18,
+      "paid_cents": 160208,
+      "paid_per_member_month": 66.75333333333333,
+      "claims_per_1000_member_months": 375.0
+    },
+    {
+      "month": "2024-09-01",
+      "member_months": 24,
+      "claims": 18,
+      "lines": 32,
+      "units": 33,
+      "paid_cents": 246439,
+      "paid_per_member_month": 102.68291666666666,
+      "claims_per_1000_member_months": 750.0
+    },
+    {
+      "month": "2024-10-01",
+      "member_months": 24,
+      "claims": 17,
+      "lines": 27,
+      "units": 27,
+      "paid_cents": 232302,
+      "paid_per_member_month": 96.7925,
+      "claims_per_1000_member_months": 708.3333333333334
+    },
+    {
+      "month": "2024-11-01",
+      "member_months": 24,
+      "claims": 0,
+      "lines": 0,
+      "units": 0,
+      "paid_cents": 0,
+      "paid_per_member_month": 0.0,
+      "claims_per_1000_member_months": 0.0
+    },
+    {
+      "month": "2024-12-01",
+      "member_months": 24,
+      "claims": 0,
+      "lines": 0,
+      "units": 0,
+      "paid_cents": 0,
+      "paid_per_member_month": 0.0,
+      "claims_per_1000_member_months": 0.0
+    }
+  ],
+  "cohorts": [
+    {
+      "cohort": "55 and over",
+      "members": 10,
+      "member_months": 120,
+      "claims": 45,
+      "paid_cents": 658768,
+      "paid_per_member_month": 54.897333333333336,
+      "claims_per_1000_member_months": 375.0
+    },
+    {
+      "cohort": "Under 55",
+      "members": 14,
+      "member_months": 168,
+      "claims": 56,
+      "paid_cents": 931759,
+      "paid_per_member_month": 55.461845238095236,
+      "claims_per_1000_member_months": 333.3333333333333
+    }
+  ],
+  "join_groups": [
+    {
+      "lines_per_claim": 1,
+      "claims": 37,
+      "paid_cents": 298469,
+      "joined_paid_cents": 298469
+    },
+    {
+      "lines_per_claim": 2,
+      "claims": 32,
+      "paid_cents": 473541,
+      "joined_paid_cents": 947082
+    },
+    {
+      "lines_per_claim": 3,
+      "claims": 32,
+      "paid_cents": 818517,
+      "joined_paid_cents": 2455551
+    }
+  ]
+};
