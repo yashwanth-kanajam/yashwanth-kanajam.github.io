@@ -7,7 +7,7 @@
     const path=select.value,response=examples[path];
     document.getElementById('api-request').textContent='GET '+path;
     document.getElementById('api-response').textContent=JSON.stringify(response,null,2);
-    document.getElementById('api-status').textContent=response.error?'Recorded HTTP 422: unsupported filter value.':'Recorded HTTP 200: successful response.';
+    document.getElementById('api-status').textContent=response.error?'Recorded HTTP 422: unsupported filter value.':'Recorded response: HTTP 200.';
   }
   select.addEventListener('change',render);document.getElementById('api-example-app').hidden=false;render();
 })();
