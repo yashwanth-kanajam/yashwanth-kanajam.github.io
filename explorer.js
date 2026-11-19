@@ -7,7 +7,7 @@
   const decimal = n => n === null ? 'Not defined' : new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(n);
   const month = value => new Date(value + 'T12:00:00Z').toLocaleDateString('en-US',{month:'short',year:'numeric',timeZone:'UTC'});
   const measures = {
-    paid: {label:'Paid spending (USD)',value:r=>r.paid_cents/100,format:money},
+    paid: {label:'Paid amount (USD)',value:r=>r.paid_cents/100,format:money},
     pmpm: {label:'Paid per enrolled member-month (USD)',value:r=>r.paid_per_member_month,format:money},
     claims: {label:'Claim count',value:r=>r.claims,format:decimal},
     rate: {label:'Claims per 1,000 enrolled member-months',value:r=>r.claims_per_1000_member_months,format:decimal}
@@ -55,7 +55,7 @@
     if(!valid){$('monthly-kpis').replaceChildren();$('monthly-chart').replaceChildren();$('monthly-table').replaceChildren();$('monthly-caption').textContent='No results for an invalid period.';$('period-status').textContent='Adjust the selected period to see results.';return;}
     const rows=calc.selectMonths(data.monthly,state.start,state.end),total=calc.summarize(rows),measure=measures[state.measure];
     $('period-status').textContent=`${month(rows[0].month)} – ${month(rows[rows.length-1].month)} · ${rows.length} months · ${total.claims} claims · ${total.member_months} enrolled member-months`;
-    kpis($('monthly-kpis'),[['Paid spending',money(total.paid_cents/100)],['Paid / member-month',money(total.paid_per_member_month)],['Claims / 1,000 member-months',decimal(total.claims_per_1000_member_months)]]);
+    kpis($('monthly-kpis'),[['Paid amount',money(total.paid_cents/100)],['Paid / member-month',money(total.paid_per_member_month)],['Claims / 1,000 member-months',decimal(total.claims_per_1000_member_months)]]);
     $('monthly-caption').textContent=measure.label;
     chart($('monthly-chart'),rows,measure,rows.map(r=>month(r.month)));
     table($('monthly-table'),'Selected monthly source values',['Month','Member-months','Claims','Paid (USD)','Paid / member-month','Claims / 1,000 member-months'],rows.map(r=>[month(r.month),r.member_months,r.claims,money(r.paid_cents/100),money(r.paid_per_member_month),decimal(r.claims_per_1000_member_months)]));
@@ -68,7 +68,7 @@
   function renderJoin() {
     const s=calc.summarizeJoin(data.join_groups,state.groups);
     $('join-status').textContent=s.rows.length?`${s.claims} claims selected · ${state.groups.length} line-count ${state.groups.length===1?'group':'groups'}`:'No claim groups selected. Choose at least one group to compare totals.';
-    kpis($('join-kpis'),[['Correct total',money(s.paid_cents/100)],['Overstatement',money(s.difference_cents/100)],['Overstatement rate',s.overstatement===null?'Not defined':decimal(s.overstatement)+'%']]);
+    kpis($('join-kpis'),[['Correct total',money(s.paid_cents/100)],['Overstatement',money(s.difference_cents/100)],['Overstatement rate',s.overstatement===null?'Not calculated—no claims selected':decimal(s.overstatement)+'%']]);
     chart($('join-chart'),[{paid_cents:s.joined_paid_cents},{paid_cents:s.paid_cents}],measures.paid,['Incorrect join','Correct total'],['incorrect','']);
     table($('join-table'),'Claim groups and repeated header payments',['Lines / claim','Claims','Correct paid','Incorrect joined paid'],s.rows.map(r=>[r.lines_per_claim,r.claims,money(r.paid_cents/100),money(r.joined_paid_cents/100)]));
   }
