@@ -68,7 +68,7 @@
   function renderJoin() {
     const s=calc.summarizeJoin(data.join_groups,state.groups);
     $('join-status').textContent=s.rows.length?`${s.claims} claims selected · ${state.groups.length} line-count ${state.groups.length===1?'group':'groups'}`:'No claim groups selected. Choose at least one group to compare totals.';
-    kpis($('join-kpis'),[['Correct total',money(s.paid_cents/100)],['Overstatement',money(s.difference_cents/100)],['Overstatement rate',s.overstatement===null?'Not calculated—no claims selected':decimal(s.overstatement)+'%']]);
+    kpis($('join-kpis'),[['Correct total',money(s.paid_cents/100)],['Overstatement',money(s.difference_cents/100)],['Overstatement rate',s.overstatement===null?'Not calculated: no claims selected':decimal(s.overstatement)+'%']]);
     chart($('join-chart'),[{paid_cents:s.joined_paid_cents},{paid_cents:s.paid_cents}],measures.paid,['Incorrect join','Correct total'],['incorrect','']);
     table($('join-table'),'Claim groups and repeated header payments',['Lines / claim','Claims','Correct paid','Incorrect joined paid'],s.rows.map(r=>[r.lines_per_claim,r.claims,money(r.paid_cents/100),money(r.joined_paid_cents/100)]));
   }
